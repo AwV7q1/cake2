@@ -2,9 +2,9 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 
-const cakeUrl = new URL("../assets/cake19.glb", import.meta.url);
-const textHappy = new URL("../assets/textHappy3.glb", import.meta.url)
-const logo = new URL("../assets/logo4.glb", import.meta.url)
+const cakeUrl = new URL("../assets/model/cake19.glb", import.meta.url);
+const textHappy = new URL("../assets/model/textHappy3.glb", import.meta.url)
+const logo = new URL("../assets/model/logo4.glb", import.meta.url)
 
 let container;
 
