@@ -537,18 +537,24 @@ var _gltfloaderJs = require("three/examples/jsm/loaders/GLTFLoader.js");
 var _dracoloader = require("three/examples/jsm/loaders/DRACOLoader");
 const cakeUrl = new URL(require("4cbe649b325ba7fe"));
 const textHappy = new URL(require("5d42a329462daa28"));
-const logo = new URL(require("ef7cd4fa3f50f549"));
+const logo = new URL(require("5b64ae92bc3ce092"));
 let container;
 let camera, scene, renderer;
 let mouseX = 0, mouseY = 0;
 init();
 animate();
+// const loadingManager = new THREE.LoadingManager();
+// const progressBar = document.getElementById("progress-bar");
+// loadingManager.onProgress = function (url, loaded, total) {
+//   progressBar.value = (loaded / total) * 100;
+// };
+// const progressBarContainer = document.querySelector('')
 function init() {
     container = document.getElementById("container");
     camera = new _three.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 1, 1000);
     camera.position.set(5, 2, 8);
     scene = new _three.Scene();
-    scene.background = new _three.Color(0x9ED6EF);
+    scene.background = new _three.Color(0x9ed6ef);
     const hemiLight = new _three.HemisphereLight(0xffffff, 1);
     hemiLight.position.set(0, 10, 15);
     scene.add(hemiLight);
@@ -567,7 +573,6 @@ function init() {
         scene.add(model);
         model.position.set(0, -1.1, 0);
         model.scale.set(0.3, 0.3, 0.3);
-        model.rotateX(0);
     }, undefined, function(error) {
         console.error(error);
     });
@@ -582,8 +587,8 @@ function init() {
     loader.load(logo.href, function(gltf) {
         const model3 = gltf.scene;
         scene.add(model3);
-        model3.position.set(0, -1.05, 0);
-        model3.scale.set(0.25, 0.25, 0.25);
+        model3.position.set(-0.6, 0.42, -0.5);
+        model3.scale.set(0.12, 0.12, 0.12);
     }, undefined, function(error) {
         console.error(error);
     });
@@ -606,7 +611,6 @@ function onWindowResize() {
 function onDocumentMouseMove(event) {
     mouseX = event.clientX / 400;
     mouseY = event.clientY / 400;
-    console.log("event", event.clientX);
 }
 //
 function animate() {
@@ -620,7 +624,7 @@ function render() {
     renderer.render(scene, camera);
 }
 
-},{"three":"ktPTu","three/examples/jsm/loaders/GLTFLoader.js":"dVRsF","three/examples/jsm/loaders/DRACOLoader":"lkdU4","4cbe649b325ba7fe":"8Pd9B","5d42a329462daa28":"2qwks","ef7cd4fa3f50f549":"dIBNB"}],"ktPTu":[function(require,module,exports) {
+},{"three":"ktPTu","three/examples/jsm/loaders/GLTFLoader.js":"dVRsF","three/examples/jsm/loaders/DRACOLoader":"lkdU4","4cbe649b325ba7fe":"8Pd9B","5d42a329462daa28":"2qwks","5b64ae92bc3ce092":"b2FkS"}],"ktPTu":[function(require,module,exports) {
 /**
  * @license
  * Copyright 2010-2022 Three.js Authors
@@ -32653,8 +32657,8 @@ exports.getOrigin = getOrigin;
 },{}],"2qwks":[function(require,module,exports) {
 module.exports = require("./helpers/bundle-url").getBundleURL("2MSMO") + "textHappy3.7e1dde66.glb" + "?" + Date.now();
 
-},{"./helpers/bundle-url":"lgJ39"}],"dIBNB":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("2MSMO") + "logo4.d2d39c49.glb" + "?" + Date.now();
+},{"./helpers/bundle-url":"lgJ39"}],"b2FkS":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("2MSMO") + "logo13.8adbc618.glb" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}]},["eZyLq","dV6cC"], "dV6cC", "parcelRequire716c")
 
