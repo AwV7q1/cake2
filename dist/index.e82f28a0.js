@@ -535,15 +535,12 @@ function hmrAcceptRun(bundle, id) {
 var _three = require("three");
 var _gltfloaderJs = require("three/examples/jsm/loaders/GLTFLoader.js");
 var _dracoloader = require("three/examples/jsm/loaders/DRACOLoader");
-// import Stats from "three/examples/jsm/libs/stats.module";
 const cakeUrl = new URL(require("f7410396d2780d78"));
 const textHappy = new URL(require("1c4d3d64be931bec"));
 const logo = new URL(require("134fb0cdbbeb0424"));
-let container, stats;
+let container;
 let camera, scene, renderer;
 let mouseX = 0, mouseY = 0;
-let windowHalfX = window.innerWidth / 2;
-let windowHalfY = window.innerHeight / 2;
 init();
 animate();
 function init() {
@@ -590,21 +587,13 @@ function init() {
     }, undefined, function(error) {
         console.error(error);
     });
-    // const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-    // const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
-    // const cube = new THREE.Mesh( geometry, material );
-    // scene.add( cube );
-    // cube.position.set(0,0,0)
     renderer = new _three.WebGLRenderer({
         antialias: true
     });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     container.appendChild(renderer.domElement);
-    //   stats = new Stats();
-    //   container.appendChild(stats.dom);
     document.addEventListener("mousemove", onDocumentMouseMove);
-    //
     window.addEventListener("resize", onWindowResize);
 }
 function onWindowResize() {
@@ -623,7 +612,6 @@ function onDocumentMouseMove(event) {
 function animate() {
     requestAnimationFrame(animate);
     render();
-//   stats.update();
 }
 function render() {
     camera.position.x += (mouseX - camera.position.x) * 0.05;
