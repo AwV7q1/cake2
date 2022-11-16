@@ -15,13 +15,6 @@ let mouseX = 0,
 
 init();
 animate();
-// const loadingManager = new THREE.LoadingManager();
-// const progressBar = document.getElementById("progress-bar");
-// loadingManager.onProgress = function (url, loaded, total) {
-//   progressBar.value = (loaded / total) * 100;
-// };
-
-// const progressBarContainer = document.querySelector('')
 
 function init() {
   container = document.getElementById("container");
