@@ -123,11 +123,10 @@ function onWindowResize() {
 }
 
 function onDocumentMouseMove(event) {
-    //   mouseX = event.clientX - windowHalfX;
-    //   mouseY = event.clientY - windowHalfY;
-    mouseX = event.clientX / 800;
+
+    mouseX = event.clientX / 400;
     mouseY = event.clientY / 400;
-    //   console.log("event", event.clientX);
+      console.log("event", event.clientX);
 }
 
 //

@@ -1,5 +1,18 @@
 {
+  "name": "my-project",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "parcel": "latest"
+  },
   "dependencies": {
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "parcel": "^2.8.0",
     "three": "^0.146.0"
   }
+ 
 }
